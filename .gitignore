@@ -1,1 +1,2 @@
-.sqlite
+# Ignore all SQLite files
+*.sqlite

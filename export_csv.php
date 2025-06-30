@@ -1,5 +1,4 @@
 <?php
-// filepath: /Users/paddy/CODE/direktkredite/export_csv.php
 
 // Path to your SQLite database file
 $dbFile = 'DKV2-GmbH_20250602_194709.sqlite'; // Replace with the actual SQLite file name in your repository
@@ -25,13 +24,22 @@ try {
     $file = fopen($outputFile, 'w');
 
     // Write the CSV header with updated column names
-    fputcsv($file, ['datum', 'kredite_hinzugekommen']);
+    fputcsv($file, ['datum', 'kredite_hinzugekommen', 'kredite_rausgekommen']);
 
     // Write rows to the CSV file
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         // Convert Betrag from cents to euros
         $row['kredite_hinzugekommen'] = $row['kredite_hinzugekommen'] / 100;
-        fputcsv($file, [$row['Datum'], $row['kredite_hinzugekommen']]);
+
+        // Add kredite_rausgekommen with a default value of 0
+        $row['kredite_rausgekommen'] = 0;
+
+        // Write the row to the CSV file
+        fputcsv($file, [
+            $row['Datum'], 
+            number_format($row['kredite_hinzugekommen'], 2, '.', ''), 
+            $row['kredite_rausgekommen']
+        ]);
     }
 
     // Close the file
