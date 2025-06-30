@@ -1,6 +1,6 @@
-const GOAL_AMOUNT = 4000000; // dein Kampagnenziel
+const GOAL_AMOUNT = 400000; // dein Kampagnenziel
 
-fetch('data.csv')
+fetch('Vertraege_2025.csv')
   .then(response => response.text())
   .then(csv => {
     const rows = csv.trim().split('\n');
