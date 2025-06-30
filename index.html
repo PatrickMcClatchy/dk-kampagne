@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💜 Direktkredit Kampagne</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>💜 Direktkredit Kampagne seit dem 1. Juli 2025</h1>
+
+    <section class="totals">
+      <p style="color:green;">📥 Kredite hinzugekommen: <span id="totalIn">0</span> €</p>
+      <p style="color:red;">📤 Kredite rausgekommen: <span id="totalOut">0</span> €</p>
+      <p style="color:purple;">💼 Aktueller Stand: <span id="netTotal">0</span> €</p>
+    </section>
+
+    <div class="charts">
+      <div class="chart-box">
+        <h2>📈 Entwicklung über Zeit</h2>
+        <canvas id="lineChart"></canvas>
+      </div>
+
+      <div class="chart-box">
+        <h2>🎯 Ziel-Fortschritt 💜</h2>
+        <canvas id="goalChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
