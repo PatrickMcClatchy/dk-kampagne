@@ -1,7 +1,7 @@
 <?php
 
 // Path to your SQLite database file
-$dbFile = 'DKV2-GmbH_20250602_194709.sqlite'; // Replace with the actual SQLite file name in your repository
+$dbFile = 'DKV2-GmbH.sqlite'; // Replace with the actual SQLite file name in your repository
 
 // Output CSV file name
 $outputFile = 'Vertraege_2025.csv';
